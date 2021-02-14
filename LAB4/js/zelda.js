@@ -76,6 +76,7 @@ function NumerosAleatorios(min, max) {
     }
     Arreglo_Contador()
 
+    alert("Vamos a sacar el promedio de los arreglos");
     document.write("<h3> Promedios de los arreglos </h3>");
     function Arreglos_Promedio(){
         var num = prompt("De cuantos numeros cada renglon?");
@@ -117,7 +118,7 @@ function NumerosAleatorios(min, max) {
       }
       
  document.write(reverseNumber(number = prompt("Introduce el número que quieres invertir: ")));
-
+alert("Vamos a calcular tus vacaciones");
       //Calculo de vacaciones
       document.write("<h3> Calculo de vacaciones </h3>");
       function calculo(){
