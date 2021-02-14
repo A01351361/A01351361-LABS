@@ -108,3 +108,12 @@ function NumerosAleatorios(min, max) {
         }
     }
     Arreglos_Promedio()
+
+//Numero Inverso
+    document.write("<h3> Numero Inverso </h3>");
+    function reverseNumber(n){
+        const covertir = n.toString().split('').reverse().join('')
+        return Number(convertir)
+      }
+      
+      document.write(reverseNumber(number = prompt("Introduce el número que quieres invertir: ")));
