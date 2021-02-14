@@ -112,8 +112,21 @@ function NumerosAleatorios(min, max) {
 //Numero Inverso
     document.write("<h3> Numero Inverso </h3>");
     function reverseNumber(n){
-        const covertir = n.toString().split('').reverse().join('')
+        const convertir = n.toString().split('').reverse().join('')
         return Number(convertir)
       }
       
-      document.write(reverseNumber(number = prompt("Introduce el número que quieres invertir: ")));
+ document.write(reverseNumber(number = prompt("Introduce el número que quieres invertir: ")));
+
+      //Calculo de vacaciones
+      document.write("<h3> Calculo de vacaciones </h3>");
+      function calculo(){
+        var noches = prompt("Cuantas noches quieres viajar? ")
+        var pasajeros = prompt("Cuantos pasajeros serian? ")
+        var costo_hotel = noches * 170;
+        var costo_avion = pasajeros *  315;
+        var costo_viaje = costo_hotel + costo_avion;
+        console.log(costo_viaje);
+        document.write("El costo del viaje es de ",costo_viaje)
+        }
+calculo();
