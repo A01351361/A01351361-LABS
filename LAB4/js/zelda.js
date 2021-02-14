@@ -36,3 +36,36 @@ function NumerosAleatorios(min, max) {
     else{
         alert("La respuesta es incorrecta!, el resultado es " + suma + " tardaste " + time + "Seg");
     }
+
+    function Arreglo_Contador(){
+        cantidadnumeros = prompt("Cuantos numeros quieres agregar al arreglo?")
+        const numeros_array = []
+    
+        for (let i = 0; i < cantidadnumeros ; i++){
+            var numeros =  NumerosAleatorios(-10, 10);
+            numeros_array.push(numeros);
+        }
+        var contador0 = 0;
+        var contadorNegativos = 0;
+        var contadorPositivos = 0;
+        for (let i = 0; i <= numeros_array.length; i++){
+    
+            if (numeros_array[i] == 0){
+                contador0++;
+            }
+    
+            else if (numeros_array[i] < 0){
+                contadorNegativos++;
+            }
+    
+            else if (numeros_array[i] > 0){
+                contadorPositivos++;
+            }
+        }
+   
+
+        console.log(numeros_array);
+        alert("0's = " + contador0 + "\nNegativos = " + contadorNegativos + "\nPositivos= " + contadorPositivos);
+        document.write("Los numeros del arreglo fueron:     <br>"+ numeros_array + "</br>");
+    }
+    Arreglo_Contador()
