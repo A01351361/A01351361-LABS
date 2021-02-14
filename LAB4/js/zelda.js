@@ -1,10 +1,12 @@
+//DOM: Document Object Model
 
 const numero = prompt("Dame el número");
 
 
 
 
-
+document.write("<h3> TABLA DE CUADRADOS Y CUBOS </h3>");
+document.write("    <table style=width:100%> <tr><th>Numero</th><th>Cuadrado</th><th>Cubo</th></tr></table>")
 // TABLA DE CUADRADOS Y CUBOS
 for (var i = 1; i <= numero; i++){
     document.write("<table style=width:100%> <tr> ","<td>",i,"</td>" );
@@ -37,6 +39,10 @@ function NumerosAleatorios(min, max) {
         alert("La respuesta es incorrecta!, el resultado es " + suma + " tardaste " + time + "Seg");
     }
 
+
+    //
+
+    document.write("<h3> Contador de Arreglos </h3>");
     function Arreglo_Contador(){
         cantidadnumeros = prompt("Cuantos numeros quieres agregar al arreglo?")
         const numeros_array = []
@@ -63,9 +69,42 @@ function NumerosAleatorios(min, max) {
             }
         }
    
-
         console.log(numeros_array);
         alert("0's = " + contador0 + "\nNegativos = " + contadorNegativos + "\nPositivos= " + contadorPositivos);
-        document.write("Los numeros del arreglo fueron:     <br>"+ numeros_array + "</br>");
+        document.write("Los numeros del arreglo fueron:     <br> ["+ numeros_array + "] </br> ");
+        document.write("0's = " + contador0 + "\nNegativos = " + contadorNegativos + "\nPositivos= " + contadorPositivos);
     }
     Arreglo_Contador()
+
+    document.write("<h3> Promedios de los arreglos </h3>");
+    function Arreglos_Promedio(){
+        var num = prompt("De cuantos numeros cada renglon?");
+        var restador = prompt("Cuantos renglones quieres en la matriz?")
+        var renglones = []
+        while (restador != 0){
+            var numeros_array2 = [];
+    
+            for (let i = 0; i < num ; i++){
+                var numerost =  NumerosAleatorios(0, 10);
+                numeros_array2.push(numerost);
+            }
+            console.log(numeros_array2)
+            renglones.push(numeros_array2);
+            restador=restador-1;
+        }
+    
+        for (var i = 0; i < renglones.length; i++){
+            var promedio = 0;
+            var suma = 0;
+            for (var j = 0; j < renglones[i].length; j++){
+                var N_A = renglones[i][j];
+                suma = suma + N_A;
+            }
+            p = i+1
+            promedio = suma / num;
+            document.write("<table style=width:100%> <tr> <td>","El promedio del renglon " + p + " es = " + promedio,"</td></tr></table>");
+            console.log(renglones);
+            console.log("El promedio del renglon " + p + " es = " + promedio + "\n");
+        }
+    }
+    Arreglos_Promedio()
