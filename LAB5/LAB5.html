@@ -21,7 +21,12 @@
 
             <div id = "validado"></div>
             <br></br>
+            
             <button id = "Verificar" class = "button" onclick="verificar()"> Verificar </button>
+            
+            <div class="tooltip"> Ayuda
+                <span class="tooltiptext">Ingresa tu constraseña todos los caracteres son validos.</span>
+              </div>
         </section>
 
         <h3>Bienvenido a la Tienda Bunu</h3>
@@ -57,7 +62,19 @@
 
         </section>
 
+        <script>
 
+            </script>
+            </head>
+            <body>
+            
+            <section onclick="Pagar()">
+            <p>Para pagar con tarjeta, arrastre la tarjeta al recuadro</p>
+            
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <br>
+            <img id="drag1" src="https://www.banorte.com/wps/wcm/connect/banorte/4422b5cd-3278-45da-90cc-ae9eb7c72384/Banorte-Tarjeta-Nomina-410X290.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_M202ICC0K05780AILUO1DR2004-4422b5cd-3278-45da-90cc-ae9eb7c72384-nm1g-40" draggable="true" ondragstart="drag(event)" width="350" height="250">
+        </section>
     </main>
     <script src="js_5/lab5.js"></script>
 </body>

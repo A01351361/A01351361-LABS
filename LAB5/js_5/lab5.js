@@ -11,12 +11,14 @@ p2.onkeypress = () => {
 
 function verificar(){
     let validacion = document.getElementById("validado");
+    var x = document.getElementById("Verificar");
     if (p1.value == p2.value){
         validacion.innerHTML = "<p style=color:green>Tu contraseña es correcta</p>";
-
+        x.disabled = true;
     }
     else {
         validacion.innerHTML = "<p style=color:red>Tus contraseñas no coinciden.</p>";
+        x.disabled = true;
     }
     
 }
@@ -40,4 +42,19 @@ function Pagar(){
 
     suma.innerHTML = "<p> El costo de los productos es de: $" + total_sin_iva + "</p>"+ "<p> El iva de 16% es de: $" + iva + "</p>" + "<p><strong>El costo total de su pedido a pagar es de: $" + sumatotal +"</strong></p>";
 }
+
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    alert("Gracias por tu compra, se te cobro $" + sumatotal +" de tu tarjeta")
+  }
 
