@@ -1,21 +1,25 @@
-let password = document.getElementById("password");
-password.onkeypress = () => {
-    console.log(password);
+
+var p1 = document.getElementById("passwd");
+p1.onkeypress = () => {
+    console.log(p1);
 }
 
-let passwordvalido = document.getElementById("passwordvalidar");
-passwordvalido.onkeypress = () => {
-    console.log(passwordvalido);
+var p2 = document.getElementById("passwd2");
+p2.onkeypress = () => {
+    console.log(p2);
 }
 
 function verificar(){
-    console.log("pepe")
-    if (console.log(password) == console.log(passwordvalido)){
-        document.write("Tu contraseña es valida")
+    let validacion = document.getElementById("validado");
+    if (p1.value == p2.value){
+        validacion.innerHTML = "<p style=color:green>Tu contraseña es correcta</p>";
+
     }
-    else{
-        document.write("Tu contraseña no es valida, son diferentes.")
+    else {
+        validacion.innerHTML = "<p style=color:red>Tus contraseñas no coinciden.</p>";
     }
+    
 }
+
 
 //<button id = "Verificar" class = "button" onclick="verificar()"> Verificar </button>
