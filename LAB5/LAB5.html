@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorio 5</title>
+    <link rel="stylesheet" href="CSS/main.css">
 </head>
 <header>
     <h1 id="titulo">Laboratorio 5</h1>
@@ -23,7 +24,38 @@
             <button id = "Verificar" class = "button" onclick="verificar()"> Verificar </button>
         </section>
 
+        <h3>Bienvenido a la Tienda Bunu</h3>
+        <p><strong>Escoja los productos de su interes.</strong> </p>
 
+        <section>
+          
+            <label for="Hamburguesa">Hamburguesas con queso (max. 5) ($15c/u):</label>
+            <input type="number" id="Hamburguesa" name="Hamburguesa"
+                   min="0" max="5">
+            <br></br>
+            <label for="Boneless">Boneless Original 250gr (max. 5) ($15c/u):</label>
+            <input type="number" id="Boneless" name="Boneless"
+                   min="0" max="5">
+        
+            <br></br>
+            <label for="Alitas">Alitas Original 250gr (max. 5) ($10c/u):</label>
+            <input type="number" id="Alitas" name="Alitas"
+                min="0" max="5">
+
+                <br></br>
+            <label for="Malteada">Malteada de Vainilla (max. 5) ($7c/u):</label>
+            <input type="number" id="Malteada" name="Malteada"
+            min="0" max="5">
+            <br></br>
+           
+            <div id = "costo"></div>
+        
+            <br></br>
+            <button id = "Pagar" class = "button" onclick="Pagar()"> Pagar </button>
+                   
+                   
+
+        </section>
 
 
     </main>
