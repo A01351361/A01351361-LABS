@@ -22,18 +22,27 @@ arreglo();
   
 function stringr(){
     const filesystem = require('fs');
-    const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-    });
-    readline.question('Que quieres agregar al archivo de texto? ', string => {
-        filesystem.writeFileSync('String.txt', string);
-        readline.close();
-      });
+    const prompt = require('prompt-sync')();
+    var string = prompt('Que quieres agregar al archivo de texto? ');
+    filesystem.writeFileSync('String.txt', string);
+      
     
 
 }
 stringr();
+
+function calculo(){
+    const prompt = require('prompt-sync')();
+
+    const noches = prompt('Cuantas noches quieres viajar? ');
+    const pasajeros = prompt('Cuantos pasajeros van a viajar? ');
+    var costo_hotel = noches * 170;
+
+    var costo_avion = pasajeros *315;
+    var costo_viaje = costo_hotel + costo_avion;
+    console.log("El costo del viaje es de ",costo_viaje," pesos mexicanos")
+    }
+    calculo()
 
 
 const http = require('http');
