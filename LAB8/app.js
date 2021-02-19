@@ -42,7 +42,7 @@ function calculo(){
     var costo_viaje = costo_hotel + costo_avion;
     console.log("El costo del viaje es de ",costo_viaje," pesos mexicanos")
     }
-    calculo()
+    calculo();
 
 
 const http = require('http');
@@ -53,7 +53,7 @@ const server = http.createServer( (request, response) => {
     response.setHeader('Content-Type', 'text/html');
     response.write("<html>");
     response.write("<head><title>Servidor node</title></head>");
-    response.write("<body><h1>Hola desde el servidor</h1></body>");
+    response.write("<body><h1>Pagina en blanco......</h1></body>");
     response.write("</html>");
     response.end();
 });
