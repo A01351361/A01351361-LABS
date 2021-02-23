@@ -4,11 +4,11 @@ filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
 
 const http = require('http');
- 
+const mascotas = ["Perro"];
  const server = http.createServer( (request, response) => {
      console.log(request.url);
  
-     const mascotas = ["Perro"];
+
      
      if (request.url === "/mascotas") {
          response.setHeader('Content-Type', 'text/html');
