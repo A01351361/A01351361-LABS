@@ -52,8 +52,9 @@ const mascotas = ["Perro"];
              const nueva_mascota = datos_completos.split('=')[1];
              mascotas.push(nueva_mascota);
              console.log(nueva_mascota);
-            console.log(mascotas);
-             response.writeHead(301, { Location: '/mascotas' });
+             response.statusCode = 302;
+             response.setHeader('Location', '/mascotas');
+             return response.end();
          });
  
      } else if (request.url === "/") {
@@ -62,7 +63,7 @@ const mascotas = ["Perro"];
          response.write('<head><meta charset="UTF-8"><title>Servidor node</title></head>');
          response.write("<body><h1>Hola desde el servidor</h1></body>");
          response.write("</html>");
-         response.end();
+         return response.end();
      } else {
          response.statusCode = 404;
          response.setHeader('Content-Type', 'text/html');
