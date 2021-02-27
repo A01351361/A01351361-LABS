@@ -13,17 +13,17 @@
       next(); //Le permite a la petición avanzar hacia el siguiente middleware
   });
   
- app.get('/personajes/nuevo-personaje', (request, response, next) => {
-     response.send('<h1>Nuevo Personaje</h1><body><h1>Agrega un personaje</h1><form action="nuevo-personaje" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar personaje"></form>'); 
+ app.get('/mascotas/nueva-mascota', (request, response, next) => {
+     response.send('<h1>Nueva Mascota</h1><body><h1>Agrega una mascota</h1><form action="nueva-mascota" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar mascota"></form>'); 
  });
  
- app.post('/personajes/nuevo-personaje', (request, response, next) => {
+ app.post('/mascotas/nueva-mascota', (request, response, next) => {
     console.log(request.body.nombre);
-     response.send('<h1>Prsonaje guardado</h1>'); 
+     response.send('<h1>Mascota guardada</h1>'); 
  });
  
- app.use('/personajes', (request, response, next) => {
-     response.send('<h1>Personajes</h1>'); 
+ app.use('/mascotas', (request, response, next) => {
+     response.send('<h1>Mascotas</h1>'); 
  });
  
  app.use('/', (request, response, next) => {
