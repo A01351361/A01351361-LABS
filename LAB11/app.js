@@ -3,8 +3,14 @@
 
  const express = require('express');
  const bodyParser = require('body-parser');
+ const path = require('path');
+
+
   const app = express();
   
+  app.set('view engine', 'ejs');
+app.set('views', 'views');
+
   //Middleware
  app.use(bodyParser.urlencoded({extended: false}));
  
@@ -17,6 +23,13 @@
      response.send('<h1>Nueva Mascota</h1><body><h1>Agrega una mascota</h1><form action="nueva-mascota" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar mascota"></form>'); 
  });
  
+
+app.get('/git',(request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'git.html'));
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+
  app.post('/mascotas/nueva-mascota', (request, response, next) => {
     console.log(request.body.nombre);
      response.send('<h1>Mascota guardada</h1>'); 
