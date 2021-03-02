@@ -1,7 +1,0 @@
-El archivo package-lock.json es un archivo generado automáticamente cuando se instalan paquetes o dependencias en el proyecto. 
-Su propósito es mantener un historial de los paquetes instalados y optimizar la forma en que se generan las dependencias del proyecto 
-y los contenidos de la carpeta node_modules.
-
-Más que nada el package.json es para poder tener librerias diferentes en un mismo archivo en el cual seria el de 
-package-lock.json, así instalandolos desde npm con el comando "npm install <pkg> " el cual se elige el paquete
-de la libreria. 
