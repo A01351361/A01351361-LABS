@@ -1,0 +1,24 @@
+Ejecuta la siguiente instrucción
+
+sp_help materiales
+
+¿Que muestra la instrucción?
+
+- Muestra las tablas activas con los datos de cada columna.
+
+
+
+Ejecuta las instrucciones que contiene el archivo crear.sql
+
+¿Qué efecto tuvo esta acción?
+- Abrio el query guardado con las 4 tablas y lo ejecuto.
+
+¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+- Que puedes eliminar las tablas y tener el query de crear tablas para que sea más rapido.
+
+
+¿Qué relación tienen con las tablas de la base de datos?
+- La relación que tienen es que tienen los nombres de los atributos de cada tabla en cada columna y abajo los datos a poblar.
+
+¿Qué sucedió?
+- Mostro los datos de la base de datos de la tabla de Materiales.
