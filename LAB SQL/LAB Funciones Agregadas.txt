@@ -1,0 +1,14 @@
+1. El ingreso total recibido por cada actor, sin importar en cuantas películas haya participado.
+
+SELECT nombre, SUM(sueldo) as 'Sueldo total' FROM Elenco GROUP BY nombre
+
+2.  El monto total destinado a películas por cada Estudio Cinematográfico, durante la década de los 80's.
+
+3. Nombre y sueldo promedio de los actores (sólo hombres) que reciben en promedio un pago superior a 5 millones de dolares por película.
+
+4. Título y año de producción de las películas con menor presupuesto. (Por ejemplo, la película de Titanic se ha producido en varias veces entre la lista de películas estaría la producción de Titanic y el año que fue filmada con menor presupuesto).
+
+5. Mostrar el sueldo de la actriz mejor pagada.
+
+
+

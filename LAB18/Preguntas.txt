@@ -1,0 +1,7 @@
+
+¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+- Para no hacer codigo espaguetti y saber donde exactamente esta lo del database.
+
+¿Qué es SQL injection y cómo se puede prevenir?
+- Es una vulnerabilidad de seguridad web que permite a un atacante interferir con las consultas que una aplicación realiza a su base de datos.
+- Para prevenirlo podemos rechazar las peticiones con caractéres sospechosos, no mostrar al usuario la informacion de error por la base de datos, parametrizar las consultas SQL.
