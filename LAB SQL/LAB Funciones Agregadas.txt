@@ -4,11 +4,25 @@ SELECT nombre, SUM(sueldo) as 'Sueldo total' FROM Elenco GROUP BY nombre
 
 2.  El monto total destinado a películas por cada Estudio Cinematográfico, durante la década de los 80's.
 
+SELECT nomestudio, SUM(presupuesto) as 'Presupuesto Total' FROM Pelicula GROUP BY nomestudio
+
 3. Nombre y sueldo promedio de los actores (sólo hombres) que reciben en promedio un pago superior a 5 millones de dolares por película.
+
+SELECT nombre, AVG(sueldo) as 'promedio'
+FROM Elenco, Actor
+WHERE Elenco.nombre = Actor.nombre AND sexo = 'h'
+HAVING AVG(sueldo) > 5000000
+ORDER BY AVG(sueldo) DESC
 
 4. Título y año de producción de las películas con menor presupuesto. (Por ejemplo, la película de Titanic se ha producido en varias veces entre la lista de películas estaría la producción de Titanic y el año que fue filmada con menor presupuesto).
 
+SELECT titulo, año, MIN(presupuesto) as 'presupuesto minimmo'
+FROM pelicula
+
 5. Mostrar el sueldo de la actriz mejor pagada.
 
+SELECT nombre, max(sueldo)
+FROM elenco
+WHERE sexo = 'f'
 
 
