@@ -5,10 +5,19 @@
     <h1><%= titulo %></h1>
     <form action="nueva-mascota" method="POST">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <label for="nombre_personaje">Nombre</label>
         <input type="text" name="nombre_mascota">
-        <input type="text" name="imagen_mascota">
-        <input type="submit" value="Guardar mascota">
+        <label for="imagen_personaje">Imagen</label>
+        <input type="file" name="imagen_mascota">
+        <br>
+        <br>
+        <input type="submit" class="waves-effect waves-light btn" value="Guardar mascota">
+        <br>
+        <br>
     </form>
+
+    
+
 </main>
 
 <%- include('partials/footer.ejs') %>

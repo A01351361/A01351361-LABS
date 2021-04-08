@@ -9,15 +9,26 @@ exports.getNuevaMascota = (request, response, next) => {
 };
 
 exports.postNuevaMascota = (request, response, next) => {
+    console.log("Creando nuevo mascota...");
     console.log(request.body.nombre_mascota);
-    const nueva_mascota = new Mascota(request.body.nombre_mascota, request.body.imagen_mascota);
-    nueva_mascota.save()
-    .then(() => {
-        response.setHeader('Set-Cookie', ['ultima_mascota='+nueva_mascota.nombre+'; HttpOnly']);
-        response.redirect('/mascotas');
-    }).catch(err => console.log(err));
     
+    const image = request.file;
+    console.log(image);
+
+    if(!image) {
+        console.error('Error al subir la imagen');
+        return response.status(422).redirect('/');
+    }
+
+    const nueva_mascota = new Mascota(request.body.nombre_mascota, image.filename);
+    nueva_mascota.save()
+        .then(() => {
+            response.setHeader('Set-Cookie', ['ultima_mascota='+nueva_mascota.nombre+'; HttpOnly']);
+            response.redirect('/mascotas');
+        }).catch(err => console.log(err));
+
 }
+
 
 
 exports.getMascota = (request, response, next) => {
