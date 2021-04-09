@@ -1,6 +1,11 @@
-¿Qué otras formas de autentificación existen?
+¿Qué alternativas a jQuery existen?
+Zepto.js, XUI, Snack.js, 140medley, Qwery.
 
-- Identificador en linea: Diseño para dispositivos moviles y tablets.
-- SMS OTP: One time password a traves de un mensaje de texto y autentica simultaneamente al usuario.
-- URL via sms
-- Mobile connect.
+¿Qué es una promesa en js?
+
+ es un objeto que representa la terminación o el fracaso de una operación asíncrona.
+
+¿Cómo funcionan async y await?
+
+Cuando se llama una funcion async lo que regresa es un elemento de promesa.
+El await es para esperar a una promesa.
