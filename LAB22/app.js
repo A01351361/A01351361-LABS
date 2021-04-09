@@ -5,8 +5,8 @@ const path = require('path');
 const app = express();
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
-const csrf = require('csurf');
-const csrfProtection = csrf();
+//const csrf = require('csurf');
+//const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -16,6 +16,7 @@ const rutasUsers = require('./routes/users');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 const multer = require('multer');
 
@@ -39,7 +40,7 @@ const fileStorage = multer.diskStorage({
 app.use(multer(
     { storage: fileStorage }
     //{ dest: 'uploads' }
-    ).single('imagen_personaje'));  
+    ).single('imagen_mascota'));  
 
 //Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
@@ -58,7 +59,7 @@ app.use(session({
 //Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(csrfProtection); 
+//app.use(csrfProtection); 
 
 app.use((request, response, next) => {
     console.log('Middleware!');

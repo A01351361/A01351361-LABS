@@ -1,0 +1,6 @@
+¿Qué otras formas de autentificación existen?
+
+- Identificador en linea: Diseño para dispositivos moviles y tablets.
+- SMS OTP: One time password a traves de un mensaje de texto y autentica simultaneamente al usuario.
+- URL via sms
+- Mobile connect.

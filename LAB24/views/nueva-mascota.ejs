@@ -1,0 +1,23 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<main class="container">
+    <h1><%= titulo %></h1>
+    <form action="nueva-mascota" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <label for="nombre_personaje">Nombre</label>
+        <input type="text" name="nombre_mascota">
+        <label for="imagen_personaje">Imagen</label>
+        <input type="file" name="imagen_mascota">
+        <br>
+        <br>
+        <input type="submit" class="waves-effect waves-light btn" value="Guardar mascota">
+        <br>
+        <br>
+    </form>
+
+    
+
+</main>
+
+<%- include('partials/footer.ejs') %>

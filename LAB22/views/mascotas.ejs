@@ -3,7 +3,9 @@
 
     <main class="container">
         <h1><%= titulo %></h1>
-        <div class="row">
+        <label for="buscar">Buscar</label>
+        <input type="text" name="buscar" id="buscar" onkeyup="buscar()">
+        <div class="row" id="resultados">
             <% for (let mascota of lista_mascotas) { %>
                 <div class="col s12 m4 l3">
                   <div class="card small">
@@ -25,3 +27,51 @@
     </main>
 
 <%- include('partials/footer.ejs') %>
+
+
+<script>
+  function buscar() {
+    const valor_busqueda = document.getElementById('buscar').value;
+    //El token de protección CSRF
+    //const csrf = document.getElementById('_csrf').value;
+
+    let data = {valor_busqueda: valor_busqueda};
+    console.log(valor_busqueda);
+    //función que manda la petición asíncrona
+    fetch('/mascotas/buscar', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            //'csrf-token': csrf,
+            'Content-Type': 'application/json'
+          },
+    }).then(result => {
+        return result.json(); //Regresa otra promesa
+    }).then(data => {
+        //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+        console.log(data);
+        let html = '';
+        for (let mascota of data) {
+          html += '<div class="col s12 m4 l3">' + 
+                  '<div class="card small">' + 
+                      '<div class="card-image waves-effect waves-block waves-light">' +
+                        '<img class="activator" src="'+ mascota.imagen +'">' +
+                      '</div>' +
+                      '<div class="card-content">' +
+                        '<span class="card-title activator grey-text text-darken-4">' + mascota.nombre + '<i class="material-icons right">more_vert</i></span>' +
+                        '<p><a href="#">...</a></p>' +
+                      '</div>' +
+                      '<div class="card-reveal">' +
+                        '<span class="card-title grey-text text-darken-4">'+ mascota.nombre +'<i class="material-icons right">close</i></span>' +
+                        '<p>Fuente de la imagen: '+ mascota.imagen +'</p>' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>';
+        }
+        document.getElementById("resultados").innerHTML = html;
+
+    }).catch(err => {
+        console.error(err);
+    });
+  }
+</script>
