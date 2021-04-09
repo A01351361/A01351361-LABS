@@ -1,6 +1,6 @@
-¿Qué otras formas de autentificación existen?
+¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications?
+- AJAX tiene la importancia en proponer presentaciones en base a CSS y XHTML, controles de eventos de los usuarios, intercambio de datos y manipulacion usando XML y XSLT.
 
-- Identificador en linea: Diseño para dispositivos moviles y tablets.
-- SMS OTP: One time password a traves de un mensaje de texto y autentica simultaneamente al usuario.
-- URL via sms
-- Mobile connect.
+¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?
+
+- Con el recurso de document.domain se puede solucionar el acceso a recursos no originados en el mismo dominio.
