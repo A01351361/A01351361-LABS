@@ -3,7 +3,7 @@ const Mascota = require('../models/mascota');
 exports.getNuevaMascota = (request, response, next) => {
     response.render('nueva-mascota', {
         titulo: 'Nueva mascota',
-       // csrfToken: request.csrfToken(),
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
@@ -44,21 +44,6 @@ exports.getMascota = (request, response, next) => {
         .catch(err => {
             console.log(err);
         });
-};
-
-exports.postBuscar = (request, response, next) => {
-    console.log(request.body);
-    console.log(request.body.valor_busqueda);
-    const name = request.body.valor_busqueda;
-    Mascota.fetchByName(name)
-        .then(([rows, fieldData]) => {
-            console.log(rows);
-            response.status(200).json(rows);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    
 };
 
 exports.get = (request, response, next) => {

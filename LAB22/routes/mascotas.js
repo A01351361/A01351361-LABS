@@ -14,8 +14,6 @@ router.post('/nueva-mascota', mascotasController.postNuevaMascota);
 
 router.get('/:mascota_id', mascotasController.getMascota);
 
-router.post('/buscar', mascotasController.postBuscar);
-
 router.get('/', mascotasController.get);
 
 module.exports = router;

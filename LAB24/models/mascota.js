@@ -24,4 +24,8 @@ module.exports = class Mascota {
         return db.execute('SELECT * FROM mascotas WHERE id=?', [id]);
     }
 
+    static fetchByName(nombre) {
+        return db.execute("SELECT * FROM `mascotas` WHERE `nombre` LIKE ? ", ['%'+nombre+'%']);
+    }
+
 }

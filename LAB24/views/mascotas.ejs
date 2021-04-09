@@ -3,7 +3,9 @@
 
     <main class="container">
         <h1><%= titulo %></h1>
-        <div class="row">
+        <label for="buscar">Buscar</label>
+        <input type="text" name="buscar" id="buscar" onkeyup="buscar()">
+        <div class="row" id="resultados">
             <% for (let mascota of lista_mascotas) { %>
                 <div class="col s12 m4 l3">
                   <div class="card small">
@@ -25,3 +27,4 @@
     </main>
 
 <%- include('partials/footer.ejs') %>
+
